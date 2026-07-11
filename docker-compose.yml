@@ -1,0 +1,16 @@
+# Optional: Postgres with pgvector for the retrieval/store upgrade path (M2+).
+# Local development defaults to SQLite and does not need this.
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: muni
+      POSTGRES_PASSWORD: muni
+      POSTGRES_DB: muni
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
