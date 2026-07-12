@@ -1,0 +1,53 @@
+document: nyecounty-nv-sd-2025.pdf
+sha256: 0ee359a2b15e4b60075554f3079ccb53e84431166f7c7d14f97d7304958190c4
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: Nye County School District, Nevada
+    page: 1
+    snippet: NYE COUNTY SCHOOL DISTRICT, NEVADA
+    verified: false
+  issue.issue_purpose:
+    value: to finance the acquisition, construction, improvement and equipping of
+      school facilities; and to pay the costs of issuing the Bonds
+    page: 10
+    snippet: 'The Bonds are being issued to: (i) finance the acquisition, construction,
+      improvement and equipping of school facilities; and (ii) pay the costs of issuing
+      the Bonds'
+    verified: false
+  issue.pledge_type:
+    value: general obligation bonds secured by the full faith, credit and taxing power
+      of the District
+    page: 49
+    snippet: General obligation bonds secured by the full faith, credit and taxing
+      power of the District
+    verified: false
+  issue.revenue_source:
+    value: ad valorem property taxes
+    page: 21
+    snippet: The District currently expects to repay the Bonds without increasing
+      its debt rate of $0.5850
+    verified: false
+  issue.debt_service_reserve:
+    value: $5,177,806
+    page: 21
+    snippet: After the issuance of the Bonds, the amount required to be on deposit
+      in the Reserve Account is $5,177,806*
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 74
+    snippet: The District approved the budget for the 2024-2025 year on May 20, 2024
+      and is preparing an amended budget to update current actual student counts and
+      the Pupil-Centered Funding Plan for the 2024-2025 year
+    verified: false
+  issue.annual_filing_deadline:
+    value: April 15
+    page: 107
+    snippet: Before April 15, the Superintendent of Schools submits to the Board of
+      School Trustees a tentative budget for the upcoming fiscal year
+    verified: false

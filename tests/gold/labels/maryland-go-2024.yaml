@@ -1,0 +1,51 @@
+document: maryland-go-2024.pdf
+sha256: 5399921b11deef699769b4ae919485dbd2fdef9500077495ca40e4ae862c6be2
+cusip: null
+generated_from: extraction 4 (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: State of Maryland
+    page: 10
+    snippet: THE BONDS General The $1,200,000,000 aggregate principal amount of general
+      obligation bonds offered by this Official Statement constitutes the State and
+      Local Facilities Loan of 2024, First Series.
+    verified: false
+  issue.issue_purpose:
+    value: State and Local Facilities Loan of 2024
+    page: 10
+    snippet: THE BONDS General The $1,200,000,000 aggregate principal amount of general
+      obligation bonds offered by this Official Statement constitutes the State and
+      Local Facilities Loan of 2024, First Series.
+    verified: false
+  issue.pledge_type:
+    value: general obligation
+    page: 10
+    snippet: THE BONDS General The $1,200,000,000 aggregate principal amount of general
+      obligation bonds offered by this Official Statement constitutes the State and
+      Local Facilities Loan of 2024, First Series.
+    verified: false
+  issue.revenue_source:
+    value: State property tax receipts
+    page: 7
+    snippet: In fiscal year 2024, debt service on general obligation bonds is paid
+      primarily from State property tax receipts.
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 47
+    snippet: The Maryland State Retirement and Pension System Actuarial Valuation
+      Report, as of June 30, 2023
+    verified: false
+  issue.annual_filing_deadline:
+    value: null
+    page: null
+    snippet: null
+    verified: false

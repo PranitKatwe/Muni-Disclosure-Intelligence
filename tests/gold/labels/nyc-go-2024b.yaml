@@ -1,0 +1,54 @@
+document: nyc-go-2024b.pdf
+sha256: 840bcea1c41975ad978f3205e6d788ea33b24d522cab7d35edd780fc9433dca3
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: The City of New York
+    page: 12
+    snippet: As required by the New York State Financial Emergency Act For The City
+      of New York (the “Financial Emergency Act” or the “Act”)
+    verified: false
+  issue.issue_purpose:
+    value: The proceeds of the Subseries B-2 Bonds will be used for capital purposes
+      and for the payment of certain costs of issuance.
+    page: 27
+    snippet: The proceeds of the Subseries B-2 Bonds will be used for capital purposes
+      and for the payment of certain costs of issuance.
+    verified: false
+  issue.pledge_type:
+    value: general obligations
+    page: 12
+    snippet: The Bonds are general obligations of the City for the payment of which
+      the City has pledged its faith and credit.
+    verified: false
+  issue.revenue_source:
+    value: ad valorem taxes, without limitation as to rate or amount
+    page: 12
+    snippet: All real property subject to taxation by the City is subject to the levy
+      of ad valorem taxes, without limitation as to rate or amount, to pay the principal
+      of, applicable redemption premium, if any, and interest on the Bonds.
+    verified: false
+  issue.debt_service_reserve:
+    value: general debt service fund (the “General Debt Service Fund” or the “Fund”)
+    page: 26
+    snippet: a general debt service fund (the “General Debt Service Fund” or the “Fund”)
+      has been established for City bonds and certain City notes.
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 12
+    snippet: City fiscal years end on June 30 and are referred to by the calendar
+      year in which they end.
+    verified: false
+  issue.annual_filing_deadline:
+    value: within 185 days after the end of each fiscal year
+    page: 101
+    snippet: (a) within 185 days after the end of each fiscal year, to the Electronic
+      Municipal Market Access system ("EMMA") (www.emma.msrb.org) established by the
+      Municipal Securities Rulemaking Board (the "MSRB"), core financial information
+      and operating data for the prior fiscal year
+    verified: false

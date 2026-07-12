@@ -1,0 +1,51 @@
+document: wabasha-mn-isd811-2024a.pdf
+sha256: bf7adeef5e04183b47646d140851a94fa74c55f850ccff7d6086fa1f2c195485
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: Independent School District No. 811 (Wabasha-Kellogg Public School), Minnesota
+    page: 1
+    snippet: INDEPENDENT SCHOOL DISTRICT NO. 811 (WABASHA-KELLOGG PUBLIC SCHOOL),
+      MINNESOTA
+    verified: false
+  issue.issue_purpose:
+    value: financing the acquisition and betterment of school sites and facilities
+    page: 6
+    snippet: The Bonds are being issued pursuant to Minnesota Statutes, Chapter 475,
+      as amended, and a special election held November 7, 2023, by the District, at
+      which voters approved a building program by a vote of 762 - 468.
+    verified: false
+  issue.pledge_type:
+    value: general obligations of the District
+    page: 6
+    snippet: The Bonds will be general obligations of the District to which its full
+      faith and credit and taxing powers are pledged.
+    verified: false
+  issue.revenue_source:
+    value: ad valorem taxes levied by the Issuer on all taxable property of the Issuer
+    page: 126
+    snippet: The principal of and interest on the Bonds are payable from ad valorem
+      taxes levied by the Issuer on all taxable property of the Issuer
+    verified: false
+  issue.debt_service_reserve:
+    value: 105% of the debt service requirements
+    page: 6
+    snippet: In accordance with Minnesota Statutes, the District will levy each year
+      an amount not less than 105% of the debt service requirements on the Bonds
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 26
+    snippet: FISCAL YEAR ENDING JUNE 30
+    verified: false
+  issue.annual_filing_deadline:
+    value: twelve (12) months after the end of the Fiscal Year
+    page: 132
+    snippet: The District shall provide to the Repository not later than twelve (12)
+      months after the end of the Fiscal Year commencing with the year that ends June
+      30, 2024
+    verified: false

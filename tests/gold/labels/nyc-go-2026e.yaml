@@ -1,0 +1,50 @@
+document: nyc-go-2026e.pdf
+sha256: d717d52cad000eb05f841c894b5988f2edb41a47ca3c551c764b5e9d9d0b6e25
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: The City of New York
+    page: 11
+    snippet: THE CITY OF NEW YORK
+    verified: false
+  issue.issue_purpose:
+    value: The proceeds of the Bonds will be used for capital purposes and for the
+      payment of certain costs of issuance.
+    page: 89
+    snippet: The proceeds of the Bonds will be used for capital purposes and for the
+      payment of certain costs of issuance.
+    verified: false
+  issue.pledge_type:
+    value: general obligations of the City for the payment of which the City will
+      pledge its faith and credit
+    page: 11
+    snippet: The Bonds will be general obligations of the City for the payment of
+      which the City will pledge its faith and credit.
+    verified: false
+  issue.revenue_source:
+    value: ad valorem taxes on all real property subject to taxation by the City
+    page: 11
+    snippet: All real property subject to taxation by the City will be subject to
+      the levy of ad valorem taxes, without limitation as to rate or amount, to pay
+      the principal of and interest on the Bonds.
+    verified: false
+  issue.debt_service_reserve:
+    value: General Debt Service Fund
+    page: 18
+    snippet: a general debt service fund (the “General Debt Service Fund” or the “Fund”)
+      has been established for City bonds and certain City notes
+    verified: false
+  issue.fiscal_year_end:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.annual_filing_deadline:
+    value: null
+    page: null
+    snippet: null
+    verified: false

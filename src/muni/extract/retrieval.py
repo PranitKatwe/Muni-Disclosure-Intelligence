@@ -41,10 +41,12 @@ FIELD_QUERIES: dict[str, list[str]] = {
     "fiscal_year_end": [
         "fiscal year ending annual financial information disclosure",
         "continuing disclosure undertaking annual report fiscal year ends december",
+        "the city's fiscal year began on january budget process",
     ],
     "annual_filing_deadline": [
         "continuing disclosure undertaking annual report not later than days after the last day of its fiscal year",
         "annual financial information will be provided within 180 210 270 days after fiscal year end EMMA",
+        "covenanted to file its ACFR financial and operating data within days after the close of the fiscal year",
     ],
     "maturity_schedule": [
         "maturity schedule cusip interest rate price yield principal amount",

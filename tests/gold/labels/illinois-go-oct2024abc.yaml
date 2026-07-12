@@ -1,0 +1,62 @@
+document: illinois-go-oct2024abc.pdf
+sha256: f6f1d3151496a504ec80935085fa86c1bd9d7c521e7bbc5b39ba87ce9d451896
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: STATE OF ILLINOIS
+    page: 1
+    snippet: STATE OF ILLINOIS
+    verified: false
+  issue.issue_purpose:
+    value: to (i) fund accelerated pension benefit payments pursuant to Section 7.7
+      of the Bond Act, (ii) finance capital expenditures authorized by the State’s
+      previous capital programs and the Rebuild Illinois capital plan (“Capital Projects”)
+      and (iii) pay costs of issuance of the October 2024A Bonds
+    page: 1
+    snippet: The October 2024A Bonds are issued to (i) fund accelerated pension benefit
+      payments pursuant to Section 7.7 of the Bond Act, (ii) finance capital expenditures
+      authorized by the State’s previous capital programs and the Rebuild Illinois
+      capital plan (“Capital Projects”) and (iii) pay costs of issuance of the October
+      2024A Bonds
+    verified: false
+  issue.pledge_type:
+    value: full faith and credit
+    page: 10
+    snippet: The Bonds are direct, general obligations of the State issued pursuant
+      to Section 9 of Article IX of the Illinois Constitution (“GO Bonds”), and by
+      law the full faith and credit of the State is pledged for the punctual payment
+      of interest on the Bonds as the interest becomes due and for the punctual payment
+      of the principal thereof at maturity, or any earlier redemption date, and premium,
+      if any
+    verified: false
+  issue.revenue_source:
+    value: sales tax receipts and certain tax revenues and other moneys transferred
+      from the Capital Projects Fund
+    page: 91
+    snippet: Such moneys are derived primarily from the State’s share of sales tax
+      receipts and certain tax revenues and other moneys transferred from the Capital
+      Projects Fund, to the extent available
+    verified: false
+  issue.debt_service_reserve:
+    value: $1.35 billion
+    page: 94
+    snippet: funding Railsplitter’s various business purposes, including the funding
+      of a debt service reserve fund
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 28
+    snippet: The State’s fiscal years end on June 30 of each calendar year (each a
+      “Fiscal Year”)
+    verified: false
+  issue.annual_filing_deadline:
+    value: 330 days after the last day of the State’s fiscal year
+    page: 156
+    snippet: Annual Financial Information exclusive of Audited Financial Statements
+      will be submitted to EMMA by 330 days after the last day of the State’s fiscal
+      year
+    verified: false

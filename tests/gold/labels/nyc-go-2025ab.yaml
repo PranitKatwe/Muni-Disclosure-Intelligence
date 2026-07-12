@@ -1,0 +1,63 @@
+document: nyc-go-2025ab.pdf
+sha256: f9603cb26deeb3f2684a5633af13f059761ff46fc211064a25e377e2bd3b8834
+cusip: null
+generated_from: extraction 28 (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: The City of New York
+    page: 8
+    snippet: New York State Financial Emergency Act for The City of New York (the
+      “Financial Emergency Act” or the “Act”)
+    verified: false
+  issue.issue_purpose:
+    value: to redeem, at or prior to maturity, the bonds identified in Appendix E
+      hereto by providing, with other City funds, for the payment of the principal
+      and interest and applicable redemption premium, if any, on such bonds to the
+      extent and to the payment dates shown in Appendix E. The proceeds of the Bonds
+      will also be used for the payment of certain costs of issuance.
+    page: 16
+    snippet: The proceeds of the Bonds will be used to redeem, at or prior to maturity,
+      the bonds identified in Appendix E hereto by providing, with other City funds,
+      for the payment of the principal and interest and applicable redemption premium,
+      if any, on such bonds to the extent and to the payment dates shown in Appendix
+      E. The proceeds of the Bonds will also be used for the payment of certain costs
+      of issuance.
+    verified: false
+  issue.pledge_type:
+    value: general obligations of the City for the payment of which the City has pledged
+      its faith and credit
+    page: 8
+    snippet: The Bonds are general obligations of the City for the payment of which
+      the City has pledged its faith and credit.
+    verified: false
+  issue.revenue_source:
+    value: ad valorem taxes on all real property subject to taxation by the City,
+      without limitation as to rate or amount
+    page: 8
+    snippet: All real property subject to taxation by the City is subject to the levy
+      of ad valorem taxes, without limitation as to rate or amount, to pay the principal
+      of, applicable redemption premium, if any, and interest on the Bonds.
+    verified: false
+  issue.debt_service_reserve:
+    value: General Debt Service Fund
+    page: 15
+    snippet: a general debt service fund (the “General Debt Service Fund” or the “Fund”)
+      has been established for City bonds and certain City notes
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 8
+    snippet: City fiscal years end on June 30 and are referred to by the calendar
+      year in which they end.
+    verified: false
+  issue.annual_filing_deadline:
+    value: within 185 days after the end of each fiscal year
+    page: 88
+    snippet: within 185 days after the end of each fiscal year, to the Electronic
+      Municipal Market Access system (“EMMA”) (www.emma.msrb.org) established by the
+      Municipal Securities Rulemaking Board (the “MSRB”), core financial information
+      and operating data for the prior fiscal year
+    verified: false

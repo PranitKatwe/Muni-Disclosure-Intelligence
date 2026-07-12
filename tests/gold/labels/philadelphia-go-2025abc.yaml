@@ -1,0 +1,61 @@
+document: philadelphia-go-2025abc.pdf
+sha256: 2a2a4dc1ec2b7ec3227c16b40188011f268d2c98c88b406d2f8978224dc95b1a
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: The City of Philadelphia, Pennsylvania
+    page: 8
+    snippet: The City of Philadelphia, Pennsylvania (the “City”), a corporation, body
+      politic and city of the first class existing under the laws of the Commonwealth
+      of Pennsylvania.
+    verified: false
+  issue.issue_purpose:
+    value: providing funds to (i) pay all or a portion of the costs of certain projects
+      in the City’s capital budgets and (ii) pay the costs relating to the issuance
+      of the 2025A Bonds and the 2025B Bonds
+    page: 8
+    snippet: The 2025A Bonds and the 2025B Bonds are being issued for the purpose
+      of providing funds to (i) pay all or a portion of the costs of certain projects
+      in the City’s capital budgets and (ii) pay the costs relating to the issuance
+      of the 2025A Bonds and the 2025B Bonds
+    verified: false
+  issue.pledge_type:
+    value: general obligations of the City, and the full faith, credit and taxing
+      power of the City are pledged for the payment of the principal of and interest
+      on the 2025 Bonds when due
+    page: 8
+    snippet: The 2025 Bonds are general obligations of the City, and the full faith,
+      credit and taxing power of the City are pledged for the payment of the principal
+      of and interest on the 2025 Bonds when due
+    verified: false
+  issue.revenue_source:
+    value: general revenues or funds
+    page: 8
+    snippet: The City has covenanted in the Ordinances that, so long as the 2025 Bonds
+      remain outstanding, it will make payments out of its respective sinking funds
+      or any other of its general revenues or funds
+    verified: false
+  issue.debt_service_reserve:
+    value: $112.8 million
+    page: 59
+    snippet: As of June 30, 2024, the total in the Budget Stabilization Reserve Fund
+      was $112.8 million (including interest earnings).
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 15
+    snippet: February 28; for bonds issued prior to calendar year 2015, the annual
+      filing deadline for the ACFR is 240 days after the end of the respective Fiscal
+      Year, being February 25.
+    verified: false
+  issue.annual_filing_deadline:
+    value: February 28
+    page: 15
+    snippet: February 28; for bonds issued prior to calendar year 2015, the annual
+      filing deadline for the ACFR is 240 days after the end of the respective Fiscal
+      Year, being February 25.
+    verified: false

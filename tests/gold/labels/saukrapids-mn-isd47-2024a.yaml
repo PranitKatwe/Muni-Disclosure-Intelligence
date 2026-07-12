@@ -1,0 +1,61 @@
+document: saukrapids-mn-isd47-2024a.pdf
+sha256: 99195b64f23c6aa4d0b1385f515a3161a6ca19e9c618a9c6825784229e3d38ef
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: Independent School District No. 47 (Sauk Rapids-Rice), Minnesota
+    page: 1
+    snippet: INDEPENDENT SCHOOL DISTRICT NO. 47 (SAUK RAPIDS-RICE), MINNESOTA
+    verified: false
+  issue.issue_purpose:
+    value: for the purpose of effecting a current refunding of the District's $38,340,000
+      General Obligation School Building Refunding Bonds, Series 2015A
+    page: 6
+    snippet: 'for the purpose of effecting a current refunding of the District''s
+      $38,340,000 General Obligation School
+
+      Building Refunding Bonds, Series 2015A (the "Series 2015A Bonds")'
+    verified: false
+  issue.pledge_type:
+    value: general obligations of the District for which its full faith and credit
+      and taxing powers are pledged
+    page: 1
+    snippet: 'The Bonds will be general
+
+      obligations of the District for which its full faith and credit and taxing powers
+      are pledged.'
+    verified: false
+  issue.revenue_source:
+    value: ad valorem property taxes levied without limit as to rate or amount
+    page: 6
+    snippet: 'the District will levy each
+
+      year an amount not less than 105% of the debt service requirements on the Bonds.  In
+      the event funds on hand for payment of principal and interest are at any time
+
+      insufficient, the District is required to levy additional taxes upon all taxable
+      properties within its boundaries without
+
+      limit as to rate or amount to make up any deficiency.'
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 12
+    snippet: The basic financial statements of the District for the fiscal year ended
+      June 30, 2023 have been audited
+    verified: false
+  issue.annual_filing_deadline:
+    value: twelve (12) months after the end of each fiscal year
+    page: 134
+    snippet: on or before twelve (12) months after the end of each fiscal year of
+      the District,
+    verified: false

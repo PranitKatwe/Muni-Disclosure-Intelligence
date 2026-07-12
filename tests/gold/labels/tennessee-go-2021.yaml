@@ -1,0 +1,58 @@
+document: tennessee-go-2021.pdf
+sha256: 03ad9eb194384bc1e10812bdfcb5f1afc091a7e5b5b7d574585c87bfbd3a90b2
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: State of Tennessee
+    page: 1
+    snippet: "STATE OF TENNESSEE \nGENERAL OBLIGATION BONDS"
+    verified: false
+  issue.issue_purpose:
+    value: The Series A Bonds are being issued to (i) provide for the retirement at
+      maturity of a portion of the State's outstanding general obligation commercial
+      paper ("CP") issued to fund certain capital projects of the State, (ii) refund
+      certain of the State's outstanding general obligation bonds and (iii) fund certain
+      costs of issuance of the Series A Bonds. The Series B Bonds are being used to
+      (i) refund certain of the State's outstanding general obligation bonds and (ii)
+      fund certain costs of issuance of the Series B Bonds.
+    page: 7
+    snippet: The Series A Bonds are being issued to (i) provide for the retirement
+      at maturity of a portion of the State’s outstanding general obligation commercial
+      paper (“CP”) issued to fund certain capital projects of the State, (ii) refund
+      certain of the
+    verified: false
+  issue.pledge_type:
+    value: Direct general obligations; pledge of full faith and credit
+    page: 7
+    snippet: The Bonds are direct general obligations of the State for which the State
+      has pledged its full faith and credit for the payment of principal, premium,
+      if any, and interest
+    verified: false
+  issue.revenue_source:
+    value: charge and lien upon all fees, taxes and other revenues and funds allocated
+      to the State’s general fund, debt service fund, and highway fund
+    page: 7
+    snippet: have a charge and lien upon all fees, taxes and other revenues and funds
+      allocated to the State’s general fund, debt service fund, and highway fund and,
+      if necessary, upon the first fees, taxes, revenues and funds thereafter received
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 61
+    snippet: for the fiscal year ended June 30, 2020, has been filed with the Municipal
+      Securities Rulemaking Board
+    verified: false
+  issue.annual_filing_deadline:
+    value: null
+    page: null
+    snippet: null
+    verified: false

@@ -1,0 +1,56 @@
+document: rockcastle-ky-2024.pdf
+sha256: 98cccd951d2e4810ebaca4fb0f5db05e1d7a185dc1e783c7be181d2d401bc7ac
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: Rockcastle County (Kentucky) School District Finance Corporation
+    page: 1
+    snippet: ROCKCASTLE COUNTY( KENTUCKY) SCHOOL DISTRICT FINANCE CORPORATION
+    verified: false
+  issue.issue_purpose:
+    value: financing the costs of the acquisition, construction, installation, and
+      equipping of a new middle school facility (the “Project”), (ii) paying the costs
+      of credit enhancement for the Bonds, if any, (iii) paying capitalized interest
+      for the Bonds, if desirable, and (iv) paying the costs of issuance of the Bonds
+    page: 7
+    snippet: The Bonds are being issued for the purposes of (i) financing the costs
+      of the acquisition, construction, installation, and equipping of a new middle
+      school facility (the “Project”), (ii) paying the costs of credit enhancement
+      for the Bonds, if any
+    verified: false
+  issue.pledge_type:
+    value: a pledge of the gross income and revenues derived from an annually renewable
+      Lease Agreement (the “Lease”) with the Board and a statutory mortgage lien
+    page: 7
+    snippet: The basic security for the Bonds a pledge of the gross income and revenues
+      derived from an annually renewable Lease Agreement (the “Lease”) with the Board
+      and a statutory mortgage lien
+    verified: false
+  issue.revenue_source:
+    value: gross income and revenues derived from the Lease Agreement
+    page: 11
+    snippet: payable from and secured by a pledge of the gross income and revenues
+      derived from the Lease Agreement and a statutory mortgage lien on the school
+      buildings which constitute the Project
+    verified: false
+  issue.debt_service_reserve:
+    value: there are no debt service reserve funds applicable to the Bonds
+    page: 25
+    snippet: (A) there are no debt service reserve funds applicable to the Bonds;
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 24
+    snippet: The Annual Financial Information shall be provided on or before the 270th
+      day following the fiscal year ending on the preceding June 30
+    verified: false
+  issue.annual_filing_deadline:
+    value: 270th day following the fiscal year ending on the preceding June 30
+    page: 24
+    snippet: The Annual Financial Information shall be provided on or before the 270th
+      day following the fiscal year ending on the preceding June 30
+    verified: false

@@ -1,0 +1,54 @@
+document: pennsylvania-go-2026.pdf
+sha256: 2bc8d039eafaa41918c245c512e484f10598252a1436a4e12a4092e80e2506f9
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: Commonwealth of Pennsylvania
+    page: 8
+    snippet: The Issuer The Commonwealth of Pennsylvania (the “Commonwealth”)
+    verified: false
+  issue.issue_purpose:
+    value: to provide funds to finance public improvement projects, including the
+      purchase of original furniture and equipment; public improvement projects for
+      buildings and structures; transportation assistance projects; and redevelopment
+      assistance projects, and to refinance the Commonwealth’s outstanding General
+      Obligation Bonds
+    page: 1
+    snippet: The Bonds are being issued to provide funds to finance (i) public improvement
+      projects, including the purchase of original furniture and equipment; public
+      improvement projects for buildings and structures; transportation assistance
+      projects; and redevelopment assistance projects, (ii) the refunding of all or
+      a portion of the Commonwealth’s outstanding General Obligation Bonds
+    verified: false
+  issue.pledge_type:
+    value: full faith and credit
+    page: 1
+    snippet: The Bonds are direct and general obligations of the Commonwealth, and
+      the full faith and credit of the Commonwealth are pledged for the payment of
+      principal of and interest on the Bonds
+    verified: false
+  issue.revenue_source:
+    value: General Fund
+    page: 17
+    snippet: Principal of and interest payments on the Bonds will be made from the
+      General Fund
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 91
+    snippet: The fiscal year for SERS ends on December 31 of each year
+    verified: false
+  issue.annual_filing_deadline:
+    value: null
+    page: null
+    snippet: null
+    verified: false

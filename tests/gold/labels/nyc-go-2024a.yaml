@@ -1,0 +1,56 @@
+document: nyc-go-2024a.pdf
+sha256: ebe5c824b2abd1f5c6689ad994f3d764c12892b17a2c02fe67076ccff7cd0d7c
+cusip: null
+generated_from: extraction 27 (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: The City of New York
+    page: 103
+    snippet: We have acted as Co-Bond Counsel to The City of New York (the “City”),
+      a municipal corporation of the State of New York (the “State”), in connection
+      with the issuance by the City on the date hereof of its General Obligation Bonds,
+      Fiscal 2024 Series A (the “Bonds”).
+    verified: false
+  issue.issue_purpose:
+    value: capital purposes and for the payment of certain costs of issuance
+    page: 18
+    snippet: The proceeds of the Bonds will be used for capital purposes and for the
+      payment of certain costs of issuance.
+    verified: false
+  issue.pledge_type:
+    value: general obligations
+    page: 17
+    snippet: The Bonds will be general obligations of the City issued pursuant to
+      the Constitution and laws of the State, including the Local Finance Law (the
+      “LFL”), and the City Charter and in accordance with bond resolutions of the
+      Mayor and a certificate of the Deputy Comptroller for Public Finance
+    verified: false
+  issue.revenue_source:
+    value: ad valorem taxes
+    page: 10
+    snippet: All real property subject to taxation by the City is subject to the levy
+      of ad valorem taxes, without limitation as to rate or amount, to pay the principal
+      of, applicable redemption premium, if any, and interest on the Bonds.
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 10
+    snippet: City fiscal years end on June 30 and are referred to by the calendar
+      year in which they end.
+    verified: false
+  issue.annual_filing_deadline:
+    value: 185 days after the end of each fiscal year
+    page: 88
+    snippet: within 185 days after the end of each fiscal year, to the Electronic
+      Municipal Market Access system (“EMMA”) (www.emma.msrb.org) established by the
+      Municipal Securities Rulemaking Board (the “MSRB”), core financial information
+      and operating data for the prior fiscal year
+    verified: false

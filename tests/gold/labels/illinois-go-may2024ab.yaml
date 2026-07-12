@@ -1,0 +1,56 @@
+document: illinois-go-may2024ab.pdf
+sha256: d511f37d12a4ccf8855bb5d27ecfac543ece1d24ed522813a513039d00b014dd
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: STATE OF ILLINOIS
+    page: 1
+    snippet: STATE OF ILLINOIS
+    verified: false
+  issue.issue_purpose:
+    value: (i) fund accelerated pension benefit payments pursuant to Section 7.7 of
+      the Bond Act, (ii) finance capital expenditures authorized by the State's previous
+      capital programs and the Rebuild Illinois (as defined herein) capital plan,
+      and (iii) pay costs of issuance of the May 2024A Bonds
+    page: 1
+    snippet: "The May 2024A Bonds are issued to (i) fund accelerated pension benefit\
+      \ payments pursuant to Section 7.7 \nof the Bond Act, (ii) finance capital expenditures\
+      \ authorized by the State's previous capital programs and the \nRebuild Illinois\
+      \ (as defined herein) capital plan, and (iii) pay costs of issuance of the May\
+      \ 2024A Bonds."
+    verified: false
+  issue.pledge_type:
+    value: direct, general obligations of the State, secured by a pledge of its full
+      faith and credit
+    page: 1
+    snippet: "The \nBonds are direct, general obligations of the State, secured by\
+      \ a pledge of its full faith and credit."
+    verified: false
+  issue.revenue_source:
+    value: General Revenue Fund
+    page: 86
+    snippet: transfer from the General Revenue Fund to the GOBRI Fund an amount sufficient
+      to pay the aggregate of the principal of, interest on and premium, if any, on
+      GO Bonds issued under the Bond Act
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 30
+    snippet: The State's fiscal years end on June 30 of each calendar year (each a
+      "Fiscal Year").
+    verified: false
+  issue.annual_filing_deadline:
+    value: within 30 days after its availability to GOMB
+    page: 42
+    snippet: "The State has covenanted in its continuing disclosure undertakings \n\
+      to file the Annual Report within 30 days after its availability to GOMB."
+    verified: false

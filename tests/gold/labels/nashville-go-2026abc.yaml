@@ -1,0 +1,58 @@
+document: nashville-go-2026abc.pdf
+sha256: 23b76b2c17fe218ac24d2ca62bce8683d62d0ec376ebf65027b2d6806816b229
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: THE METROPOLITAN GOVERNMENT OF NASHVILLE AND DAVIDSON COUNTY (TENNESSEE)
+    page: 1
+    snippet: 'THE METROPOLITAN GOVERNMENT OF
+
+      NASHVILLE AND DAVIDSON COUNTY (TENNESSEE)'
+    verified: false
+  issue.issue_purpose:
+    value: retire all of the outstanding principal amount of the Metropolitan Government's
+      general obligation bond anticipation notes at maturity; and (ii) pay certain
+      costs of issuance related to the Series 2026 Bonds
+    page: 1
+    snippet: 'The Series 2026 Bonds are being issued to: (i) retire all of the outstanding
+      principal amount of the Metropolitan Government’s general obligation bond anticipation
+      notes at maturity; and (ii) pay certain costs of issuance related to the Series
+      2026 Bonds.'
+    verified: false
+  issue.pledge_type:
+    value: full faith and credit; unlimited ad valorem tax general obligation pledge
+    page: 1
+    snippet: For the timely payment of principal and interest on the Series 2026 Bonds,
+      the full faith and credit of the Metropolitan Government are irrevocably pledged.
+    verified: false
+  issue.revenue_source:
+    value: unlimited ad valorem taxes to be levied on all taxable property within
+      the Metropolitan Government
+    page: 1
+    snippet: The Series 2026 Bonds will be direct obligations of the Metropolitan
+      Government and shall be payable from unlimited ad valorem taxes to be levied
+      on all taxable property within the Metropolitan Government.
+    verified: false
+  issue.debt_service_reserve:
+    value: The CCA established a debt service reserve equal to $26.5 million.
+    page: 96
+    snippet: The CCA established a debt service reserve equal to $26.5 million.
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 57
+    snippet: The Metropolitan Government operates on a fiscal year, which commences
+      July 1 and ends June 30.
+    verified: false
+  issue.annual_filing_deadline:
+    value: June 30
+    page: 139
+    snippet: the Disclosure Dissemination Agent shall provide the Annual Report to
+      each Repository not later than June 30 after the end of each Fiscal Year, commencing
+      with the first annual filing pertaining to Fiscal Year 2026 being due on June
+      30, 2027.
+    verified: false

@@ -1,0 +1,51 @@
+document: illinois-go-dec2023abc.pdf
+sha256: 4a78244d4b8c826b4d40d9fcf4e2b3c8660a3636b8edbf67724ebd90edc5ac0a
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: STATE OF ILLINOIS
+    page: 1
+    snippet: STATE OF ILLINOIS
+    verified: false
+  issue.issue_purpose:
+    value: to (i) fund accelerated pension benefit payments pursuant to Section 7.7
+      of the General Obligation Bond Act of the State and (ii) pay costs of issuance
+      of the December 2023A Bonds
+    page: 1
+    snippet: The December 2023A Bonds are issued to (i) fund accelerated pension benefit
+      payments pursuant to Section 7.7 of the Bond Act and (ii) pay costs of issuance
+      of the December 2023A Bonds
+    verified: false
+  issue.pledge_type:
+    value: full faith and credit
+    page: 1
+    snippet: The Bonds are direct, general obligations of the State, secured by a
+      pledge of its full faith and credit
+    verified: false
+  issue.revenue_source:
+    value: General Funds
+    page: 82
+    snippet: The State imposes various taxes and fees to pay its General Funds obligations,
+      including without limitation, principal and interest on its GO Bonds
+    verified: false
+  issue.debt_service_reserve:
+    value: approximately $2.063 billion
+    page: 68
+    snippet: an ending cash basis fund balance surplus of approximately $2.063 billion
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 28
+    snippet: The State’s fiscal years end on June 30 of each calendar year
+    verified: false
+  issue.annual_filing_deadline:
+    value: 330 days after the last day of the State's fiscal year
+    page: 157
+    snippet: Annual Financial Information exclusive of Audited Financial Statements
+      will be submitted to EMMA by 330 days after the last day of the State's fiscal
+      year
+    verified: false

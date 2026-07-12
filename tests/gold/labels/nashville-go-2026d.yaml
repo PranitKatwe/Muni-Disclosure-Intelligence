@@ -1,0 +1,57 @@
+document: nashville-go-2026d.pdf
+sha256: 204fe3ef765aa680c2fd62ff1766872482d1d7b1b47461bd595fc25f71ba71fc
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: The Metropolitan Government of Nashville and Davidson County
+    page: 11
+    snippet: "THE METROPOLITAN GOVERNMENT OF \nNASHVILLE AND DAVIDSON COUNTY (TENNESSEE)"
+    verified: false
+  issue.issue_purpose:
+    value: refund certain specified maturities of the Metropolitan Government's outstanding
+      General Obligation Refunding Bonds, Series 2016; fund the purchase of certain
+      maturities of Series 2017, 2018, 2021B, and 2021C Bonds; and pay certain costs
+      of issuance
+    page: 12
+    snippet: "The Series 2026D Bonds are being issued to: (i) refund certain specified\
+      \ maturities of the \nMetropolitan Government’s outstanding General Obligation\
+      \ Refunding Bonds, Series 2016"
+    verified: false
+  issue.pledge_type:
+    value: unlimited ad valorem taxes; full faith and credit
+    page: 12
+    snippet: "The Series 2026D Bonds will be direct obligations of the Metropolitan\
+      \ Government and shall be \npayable from unlimited ad valorem taxes to be levied\
+      \ on all taxable property within the Metropolitan \nGovernment.  For the timely\
+      \ payment of principal and interest on the Series 2026D Bonds, the full faith\
+      \ \nand credit of the Metropolitan Government are irrevocably pledged."
+    verified: false
+  issue.revenue_source:
+    value: unlimited ad valorem taxes levied on all taxable property within the Metropolitan
+      Government
+    page: 23
+    snippet: "The Series 2026D Bonds shall be payable from unlimited ad valorem taxes\
+      \ to be levied on all \ntaxable property within the Metropolitan Government."
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 57
+    snippet: "The Metropolitan Government operates on a fiscal year, which commences\
+      \ July 1 and ends \nJune 30."
+    verified: false
+  issue.annual_filing_deadline:
+    value: not later than twelve (12) months after each of the Metropolitan Government's
+      fiscal years
+    page: 38
+    snippet: "not later than twelve (12) months after each of the \nMetropolitan Government’s\
+      \ fiscal years (the “Annual Report”)"
+    verified: false

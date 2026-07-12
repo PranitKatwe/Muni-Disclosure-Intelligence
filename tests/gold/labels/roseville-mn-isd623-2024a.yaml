@@ -1,0 +1,49 @@
+document: roseville-mn-isd623-2024a.pdf
+sha256: 95bc7185de90c605a75996c15da11eb2a20f0db873815414e563f3b1a36f356e
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: Independent School District No. 623
+    page: 1
+    snippet: INDEPENDENT SCHOOL DISTRICT NO. 623
+    verified: false
+  issue.issue_purpose:
+    value: facility maintenance projects
+    page: 1
+    snippet: to provide funds for facility maintenance projects included in the District's
+      ten-year facility plan approved by the Commissioner of Education
+    verified: false
+  issue.pledge_type:
+    value: general obligation
+    page: 1
+    snippet: The Bonds will be general obligations of the District for which its full
+      faith and credit and taxing powers are pledged
+    verified: false
+  issue.revenue_source:
+    value: property taxes
+    page: 6
+    snippet: The District will levy each year an amount not less than 105% of the
+      debt service requirements on the Bonds, less estimated collections of other
+      revenues pledged for payments on the Bonds
+    verified: false
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 39
+    snippet: FISCAL YEAR 2023
+    verified: false
+  issue.annual_filing_deadline:
+    value: within six months of the close of each fiscal year
+    page: 39
+    snippet: Minnesota state law requires that public school districts publish, within
+      six months of the close of each fiscal year, a complete set of audited financial
+      statements
+    verified: false

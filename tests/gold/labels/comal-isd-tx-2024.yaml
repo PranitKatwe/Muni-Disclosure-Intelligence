@@ -1,0 +1,57 @@
+document: comal-isd-tx-2024.pdf
+sha256: 294f9a08514431fa6550b53f1600c0ac088ac8724c3dee2050797dce0bc079e4
+cusip: null
+generated_from: batch (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: COMAL INDEPENDENT SCHOOL DISTRICT
+    page: 1
+    snippet: COMAL INDEPENDENT SCHOOL DISTRICT
+    verified: false
+  issue.issue_purpose:
+    value: for the purposes authorized under the Election, ... to refund a portion
+      of the District's currently outstanding unlimited ad valorem, tax-supported
+      obligations
+    page: 1
+    snippet: Proceeds from the sale of the Bonds will be used (i) for the purposes
+      authorized under the Election, (ii) to refund a portion of the District's currently
+      outstanding unlimited ad valorem, tax-supported obligations
+    verified: false
+  issue.pledge_type:
+    value: ad valorem tax levied, without legal limit as to rate or amount, upon all
+      taxable property within the District
+    page: 1
+    snippet: are payable from an ad valorem tax levied, without legal limit as to
+      rate or amount, upon all taxable property within the District
+    verified: false
+  issue.revenue_source:
+    value: an annual ad valorem tax levied against all taxable property located therein,
+      without any legal limitation as to rate or amount
+    page: 9
+    snippet: The Bonds constitute direct obligations of the District payable from
+      an annual ad valorem tax levied against all taxable property located therein,
+      without any legal limitation as to rate or amount.
+    verified: false
+  issue.debt_service_reserve:
+    value: Neither the Bonds nor the Order make any provision for debt service reserves,
+      credit enhancement (except with respect to the Permanent School Fund guarantee),
+      or liquidity enhancement
+    page: 33
+    snippet: Neither the Bonds nor the Order make any provision for debt service reserves,
+      credit enhancement (except with respect to the Permanent School Fund guarantee),
+      or liquidity enhancement
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 32
+    snippet: The District’s current fiscal year end is June 30.
+    verified: false
+  issue.annual_filing_deadline:
+    value: the last day of December in each year
+    page: 32
+    snippet: it must provide updated information by the last day of December in each
+      year, unless the District changes its fiscal year.
+    verified: false

@@ -86,7 +86,7 @@ def test_diagnostics_explain_rejections():
     assert any("issuer_name" in line and "null" in line for line in diagnostics)
 
 
-def test_wrong_page_citation_fails_closed():
+def test_wrong_page_citation_is_reanchored():
     issue = make_issue(
         annual_filing_deadline=RawField(
             value="210 days",
@@ -94,8 +94,40 @@ def test_wrong_page_citation_fails_closed():
             snippet="not later than 210 days after the end of each fiscal year",
         )
     )
-    profile = extract_go_profile(PAGES, "doc1", FakeExtractor(issue), double_run=False)
-    assert profile.issue.annual_filing_deadline.value is None
+    diagnostics: list[str] = []
+    profile = extract_go_profile(PAGES, "doc1", FakeExtractor(issue), double_run=False,
+                                 diagnostics=diagnostics)
+    field = profile.issue.annual_filing_deadline
+    assert field.value == "210 days"  # real text, wrong cite -> corrected, not discarded
+    assert field.provenance.page == 3
+    assert any("re-anchored" in line for line in diagnostics)
+
+
+class QueuedFakeExtractor:
+    """Returns queued responses in order, so retry behavior can be scripted."""
+
+    model = "fake"
+
+    def __init__(self, responses):
+        self._responses = list(responses)
+
+    def extract(self, output_model, system, user_prompt):
+        return self._responses.pop(0)
+
+
+def test_retry_recovers_missed_field():
+    found = make_issue(
+        issuer_name=RawField(
+            value="City of Springfield, Illinois",
+            page=1,
+            snippet="City of Springfield, Illinois",
+        )
+    )
+    fake = QueuedFakeExtractor([make_issue(), found])  # pass 1: all null; retry: found
+    profile = extract_go_profile(PAGES, "doc1", fake, double_run=False)
+    field = profile.issue.issuer_name
+    assert field.value == "City of Springfield, Illinois"
+    assert field.confidence == 0.8  # single-run retry can't earn the cross-run bonus
 
 
 def test_missing_fields_are_not_disclosed():

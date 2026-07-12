@@ -11,8 +11,10 @@ import json
 import os
 from typing import Protocol
 
+import time
+
 import anthropic
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, ValidationError, field_validator
 
 
 class RawField(BaseModel):
@@ -22,23 +24,37 @@ class RawField(BaseModel):
     self_confidence: float | None = None  # logged only; never trusted
 
 
+# Every field is optional: models legitimately return null for "not found",
+# and open models return a literal null rather than a null-membered object.
 class IssueRaw(BaseModel):
-    issuer_name: RawField
-    issue_purpose: RawField
-    pledge_type: RawField
-    revenue_source: RawField
-    debt_service_reserve: RawField
-    fiscal_year_end: RawField
-    annual_filing_deadline: RawField
-    key_covenants: list[RawField] = []
+    issuer_name: RawField | None = None
+    issue_purpose: RawField | None = None
+    pledge_type: RawField | None = None
+    revenue_source: RawField | None = None
+    debt_service_reserve: RawField | None = None
+    fiscal_year_end: RawField | None = None
+    annual_filing_deadline: RawField | None = None
+    key_covenants: list[RawField] | None = None
+
+    @field_validator("key_covenants", mode="before")
+    @classmethod
+    def _coerce_covenants(cls, v):
+        # Open models sometimes return a single object (or an empty RawField)
+        # where the schema wants an array. Coerce instead of failing the run.
+        if isinstance(v, dict):
+            value = v.get("value")
+            if value in (None, "", []):
+                return None
+            return [v]
+        return v
 
 
 class MaturityRaw(BaseModel):
-    cusip: RawField
-    coupon: RawField
-    maturity_date: RawField
-    call_features: RawField
-    tax_status: RawField
+    cusip: RawField | None = None
+    coupon: RawField | None = None
+    maturity_date: RawField | None = None
+    call_features: RawField | None = None
+    tax_status: RawField | None = None
 
 
 class Extractor(Protocol):
@@ -118,10 +134,7 @@ class OpenAICompatExtractor:
         ]
         last_error: Exception | None = None
         for _ in range(2):  # one attempt + one repair retry
-            response = self.client.chat.completions.create(
-                model=self.model, messages=messages, temperature=0.0, max_tokens=4096
-            )
-            text = response.choices[0].message.content or ""
+            text = self._create_with_backoff(messages)
             try:
                 return output_model.model_validate_json(extract_json_object(text))
             except (ValidationError, ValueError) as err:
@@ -133,6 +146,24 @@ class OpenAICompatExtractor:
                     "Return only the corrected JSON object.",
                 })
         raise RuntimeError(f"model output failed schema validation twice: {last_error}")
+
+    def _create_with_backoff(self, messages, attempts: int = 4) -> str:
+        """Free-tier endpoints throw transient 429/5xx under load; wait and retry."""
+        import openai
+
+        for attempt in range(attempts):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model, messages=messages, temperature=0.0, max_tokens=4096
+                )
+                return response.choices[0].message.content or ""
+            except (openai.APIStatusError, openai.APIConnectionError) as err:
+                status = getattr(err, "status_code", None)
+                retryable = status is None or status == 429 or status >= 500
+                if not retryable or attempt == attempts - 1:
+                    raise
+                time.sleep(30 * (attempt + 1))
+        raise RuntimeError("unreachable")
 
 
 def make_extractor(settings, provider: str | None = None, model: str | None = None) -> Extractor:

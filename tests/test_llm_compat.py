@@ -37,3 +37,28 @@ def test_nvidia_extractor_requires_key(monkeypatch):
     monkeypatch.delenv("NVIDIA_API_KEY", raising=False)
     with pytest.raises(RuntimeError, match="build.nvidia.com"):
         make_extractor(_Settings(), provider="nvidia")
+
+
+def test_issue_raw_coerces_covenant_object_to_list():
+    from muni.extract.llm import IssueRaw
+
+    single = IssueRaw.model_validate(
+        {"key_covenants": {"value": "rate covenant", "page": 5, "snippet": "rate covenant"}}
+    )
+    assert len(single.key_covenants) == 1
+    assert single.key_covenants[0].value == "rate covenant"
+
+    empty = IssueRaw.model_validate({"key_covenants": {"value": None, "page": None}})
+    assert empty.key_covenants is None
+
+
+def test_issue_raw_accepts_literal_null_fields():
+    from muni.extract.llm import IssueRaw
+
+    raw = IssueRaw.model_validate(
+        {"issuer_name": None, "key_covenants": None,
+         "pledge_type": {"value": "GO", "page": 3, "snippet": "general obligation"}}
+    )
+    assert raw.issuer_name is None
+    assert raw.key_covenants is None
+    assert raw.pledge_type.value == "GO"

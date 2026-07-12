@@ -1,0 +1,58 @@
+document: maryland-go-2024-pos.pdf
+sha256: ac51af73e0bb4053b9da30472e0b9fbbc620b48c9220c8c10a045a5cf757166f
+cusip: null
+generated_from: extraction 29 (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: State of Maryland
+    page: 99
+    snippet: State of Maryland General Obligation Bonds, State and Local Facilities
+      Loan of 2024, consisting of First Series A Tax-Exempt Bonds
+    verified: false
+  issue.issue_purpose:
+    value: acquisition and construction of State facilities; capital grants to local
+      governments for public schools, community colleges, jails and correctional facilities;
+      and grants to local governments, nonprofit institutions, and other entities
+      for hospitals, cultural projects and other projects
+    page: 8
+    snippet: The proceeds of the First Series A Bonds will be applied for a variety
+      of public purposes, including the acquisition and construction of State facilities;
+      capital grants to local governments for public schools, community colleges,
+      jails and correctional facilities; and grants to local governments, nonprofit
+      institutions, and other entities for hospitals, cultural projects and other
+      projects.
+    verified: false
+  issue.pledge_type:
+    value: general obligation - full faith and credit and taxing power
+    page: 108
+    snippet: The First Series A Bonds are general obligations of the State, and its
+      full faith and credit and taxing power are unconditionally pledged to the punctual
+      payment of principal and interest on such Bonds when due and payable.
+    verified: false
+  issue.revenue_source:
+    value: State property tax receipts
+    page: 7
+    snippet: In fiscal year 2024, debt service on general obligation bonds is paid
+      primarily from State property tax receipts.
+    verified: false
+  issue.debt_service_reserve:
+    value: Not applicable/relevant to the Bonds
+    page: 21
+    snippet: specifically those events relating to debt service reserves, credit enhancements
+      and liquidity providers, and property or other collateral
+    verified: false
+  issue.fiscal_year_end:
+    value: fiscal year ending June 30, 2024
+    page: 131
+    snippet: commencing with the fiscal year ending June 30, 2024
+    verified: false
+  issue.annual_filing_deadline:
+    value: within 275 days after the end of the preceding fiscal year
+    page: 131
+    snippet: such information and data to be updated as of the end of the preceding
+      fiscal year and made available within 275 days after the end of the fiscal year,
+      commencing with the fiscal year ending June 30, 2024
+    verified: false

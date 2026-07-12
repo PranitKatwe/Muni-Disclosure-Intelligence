@@ -1,0 +1,54 @@
+document: sf-go-2025f.pdf
+sha256: a1d7649e826d198f64ab5c22c9893a6dc9af7700ce27ba54cad41dee22611a7e
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: CITY AND COUNTY OF SAN FRANCISCO
+    page: 1
+    snippet: CITY AND COUNTY OF SAN FRANCISCO
+    verified: false
+  issue.issue_purpose:
+    value: to finance certain authorized projects as described herein, and to pay
+      certain costs related to the issuance of the Bonds
+    page: 1
+    snippet: to finance certain authorized projects as described herein, and to pay
+      certain costs related to the issuance of the Bonds
+    verified: false
+  issue.pledge_type:
+    value: ad valorem tax
+    page: 32
+    snippet: ad valorem taxes levied to pay the principal and interest on the Bonds
+    verified: false
+  issue.revenue_source:
+    value: property taxes
+    page: 20
+    snippet: property taxes levied by the City on real property become a lien on that
+      property by operation of law
+    verified: false
+  issue.debt_service_reserve:
+    value: $621.6 million
+    page: 197
+    snippet: 'The District is obligated to fund the 2021A Reserve Fund for the benefit
+      of the 2021A bonds, the 2021C Bonds and any other 2021A Related parity Bonds
+      in an amount equal to the 2021A Reserve Requirement, or the lesser of: (i) maximum
+      annual debt service on the 2021A Bonds, 2021C Bonds and any 2021A Related Parity
+      Bonds; (ii) 125% of average annual debt service on the 2021A Bonds, 2021C Bonds
+      and any 2021A Related Parity Bonds; or (iii) 10% of the outstanding principal
+      amount of the 2021A Bonds, 2021C Bonds and any 2021A Related Parity Bonds.'
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 51
+    snippet: The City’s fiscal year commences on July 1 and ends on June 30
+    verified: false
+  issue.annual_filing_deadline:
+    value: March 27
+    page: 39
+    snippet: The Annual Report will be filed by the City with the Electronic Municipal
+      Market Access system (EMMA) of the Municipal Securities Rulemaking Board...not
+      later than March 27, 2026
+    verified: false

@@ -1,0 +1,44 @@
+document: connecticut-go-2024ab.pdf
+sha256: 7fe9673fa8d9673ea04b10088aea0bd7920f2c9ec48ad7ed0049de887d79b779
+cusip: null
+generated_from: batch (meta/llama-3.3-70b-instruct)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: State of Connecticut
+    page: 7
+    snippet: State of Connecticut
+    verified: false
+  issue.issue_purpose:
+    value: Transportation Infrastructure Purposes
+    page: 7
+    snippet: Transportation Infrastructure Purposes
+    verified: false
+  issue.pledge_type:
+    value: Special Tax Obligation Bonds
+    page: 7
+    snippet: Special Tax Obligation Bonds
+    verified: false
+  issue.revenue_source:
+    value: Pledged Revenues
+    page: 9
+    snippet: Pledged Revenues
+    verified: false
+  issue.debt_service_reserve:
+    value: Reserve Account
+    page: 157
+    snippet: Reserve Account
+    verified: false
+  issue.fiscal_year_end:
+    value: June 30
+    page: 108
+    snippet: JUNE 30, 2024
+    verified: false
+  issue.annual_filing_deadline:
+    value: eight (8) months after the close of the fiscal year
+    page: 206
+    snippet: on or before the date eight (8) months after the close of the fiscal
+      year
+    verified: false

@@ -80,17 +80,30 @@ def _reconcile(
         note(f"value {raw.value!r} had no snippet/page citation; discarded")
         return ExtractedField.not_disclosed()
 
-    page_text = pages_by_number.get(raw.page)
-    if page_text is None:
-        note(f"cited page {raw.page} does not exist in the document; discarded")
-        return ExtractedField.not_disclosed()
-    match = verify_snippet(raw.snippet, page_text)
+    page = raw.page
+    match = verify_snippet(raw.snippet, pages_by_number.get(page))
     if match.kind == "none":
-        note(
-            f"snippet not found on cited page {raw.page} "
-            f"(match score {match.score:.0f}); discarded value {raw.value!r}"
-        )
-        return ExtractedField.not_disclosed()  # snippet not on cited page -> discard
+        # Models often quote real text but cite the wrong page. The snippet is
+        # still mechanically verifiable, so re-anchor provenance to the page
+        # where the text actually appears rather than discarding a true value.
+        best: tuple[int, object] | None = None
+        for n, text in pages_by_number.items():
+            if n == raw.page:
+                continue
+            m = verify_snippet(raw.snippet, text)
+            if m.kind == "exact":
+                best = (n, m)
+                break
+            if m.kind == "fuzzy" and (best is None or m.score > best[1].score):
+                best = (n, m)
+        if best is None:
+            note(
+                f"snippet not found on cited page {raw.page} or any other page "
+                f"(cited-page score {match.score:.0f}); discarded value {raw.value!r}"
+            )
+            return ExtractedField.not_disclosed()  # snippet nowhere in doc -> discard
+        page, match = best
+        note(f"re-anchored snippet from cited page {raw.page} to page {page} ({match.kind})")
 
     confidence = compute_confidence(
         match,
@@ -100,7 +113,7 @@ def _reconcile(
     )
     return ExtractedField(
         value=raw.value,
-        provenance=Provenance(doc_id=doc_id, page=raw.page, snippet=raw.snippet),
+        provenance=Provenance(doc_id=doc_id, page=page, snippet=raw.snippet),
         confidence=confidence,
     )
 
@@ -129,6 +142,7 @@ def extract_go_profile(
     extractor: ClaudeExtractor,
     cusip: str | None = None,
     double_run: bool = True,
+    retry_failed: bool = True,
     diagnostics: list[str] | None = None,
 ) -> BondProfile:
     pages_by_number = {p.number: p.text for p in pages}
@@ -142,9 +156,13 @@ def extract_go_profile(
         + _context(issue_pages)
     )
     run_a: IssueRaw = extractor.extract(IssueRaw, SYSTEM_PRIMARY, issue_prompt)
-    run_b: IssueRaw | None = (
-        extractor.extract(IssueRaw, SYSTEM_SECONDARY, issue_prompt) if double_run else None
-    )
+    run_b: IssueRaw | None = None
+    if double_run:
+        try:
+            run_b = extractor.extract(IssueRaw, SYSTEM_SECONDARY, issue_prompt)
+        except RuntimeError as err:
+            if diagnostics is not None:
+                diagnostics.append(f"second issue pass failed, continuing single-run: {err}")
 
     def issue_field(name: str) -> ExtractedField:
         return _reconcile(
@@ -165,14 +183,50 @@ def extract_go_profile(
         fiscal_year_end=issue_field("fiscal_year_end"),
         annual_filing_deadline=issue_field("annual_filing_deadline"),
         key_covenants=_reconcile_list(
-            run_a.key_covenants,
-            run_b.key_covenants if run_b else [],
+            run_a.key_covenants or [],
+            (run_b.key_covenants or []) if run_b else [],
             pages_by_number,
             doc_id,
             "key_covenants",
             diagnostics,
         ),
     )
+
+    # --- focused retry: fields the first pass missed get a second chance with
+    # pages retrieved for just those fields (single run -> capped confidence) ---
+    scalar_fields = [f for f in ISSUE_FIELDS if f != "key_covenants"]
+    failed = [f for f in scalar_fields if getattr(issue, f).value is None]
+    if retry_failed and failed:
+        retry_candidates: dict[int, PageText] = {}
+        for name in failed:
+            for p in select_pages(pages, [name], per_field_k=6, cap=6):
+                retry_candidates.setdefault(p.number, p)
+        retry_pages = sorted(retry_candidates.values(), key=lambda p: p.number)[:12]
+        if diagnostics is not None:
+            diagnostics.append(
+                f"retrying {failed} with context pages {[p.number for p in retry_pages]}"
+            )
+        retry_prompt = (
+            "A previous pass could not find these fields: "
+            + ", ".join(failed)
+            + ". Extract ONLY these fields from the pages below; return null for every "
+            "other field in the schema.\n\n"
+            + _context(retry_pages)
+        )
+        retry_run: IssueRaw | None = None
+        try:
+            retry_run = extractor.extract(IssueRaw, SYSTEM_PRIMARY, retry_prompt)
+        except RuntimeError as err:
+            if diagnostics is not None:
+                diagnostics.append(f"retry pass failed, keeping first-pass results: {err}")
+        if retry_run is not None:
+            for name in failed:
+                field = _reconcile(
+                    getattr(retry_run, name), None, pages_by_number, doc_id,
+                    f"{name} (retry)", diagnostics,
+                )
+                if field.value is not None:
+                    setattr(issue, name, field)
 
     # --- the user's maturity row (only if a CUSIP was supplied) ---
     holding: MaturityProfile | None = None
@@ -200,11 +254,13 @@ def extract_go_profile(
             + _context(maturity_pages)
         )
         m_a: MaturityRaw = extractor.extract(MaturityRaw, SYSTEM_PRIMARY, maturity_prompt)
-        m_b: MaturityRaw | None = (
-            extractor.extract(MaturityRaw, SYSTEM_SECONDARY, maturity_prompt)
-            if double_run
-            else None
-        )
+        m_b: MaturityRaw | None = None
+        if double_run:
+            try:
+                m_b = extractor.extract(MaturityRaw, SYSTEM_SECONDARY, maturity_prompt)
+            except RuntimeError as err:
+                if diagnostics is not None:
+                    diagnostics.append(f"second maturity pass failed, continuing single-run: {err}")
 
         def m_field(name: str) -> ExtractedField:
             return _reconcile(

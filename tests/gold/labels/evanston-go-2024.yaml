@@ -1,0 +1,94 @@
+document: evanston-go-2024.pdf
+sha256: 8418d7c64757b69f9b8312af14ad5f7ada9e00dbf03f9116106b69c707c1dd86
+cusip: 299228KL9
+generated_from: extraction 26 (claude-sonnet-5)
+instructions: 'For each field: open the PDF at ''page'', confirm the snippet supports
+  the value, correct anything wrong, then set verified: true. If the fact is genuinely
+  absent from the document, value must be null.'
+fields:
+  issue.issuer_name:
+    value: City of Evanston
+    page: 1
+    snippet: "CITY OF EVANSTON \nCook County, Illinois"
+    verified: false
+  issue.issue_purpose:
+    value: reimburse the City for its prior expenditures on certain capital projects
+      detailed in Resolution 4-R-22 adopted by the City Council on January 10, 2022,
+      (ii) reimburse the City for its prior expenditures on certain capital projects
+      detailed in Resolution 19-R-23 adopted by the City Council on March 27, 2023,
+      (iii) finance other capital improvements at various locations throughout the
+      City, including certain capital expenditures as detailed for the year 2024 in
+      the City's Capital Improvement Plan, as adopted by the City Council, and (iv)
+      pay the costs of issuing the Bonds
+    page: 1
+    snippet: Bond proceeds will be used to (i) reimburse the City for its prior expenditures
+      on certain capital projects detailed in Resolution 4-R-22 adopted by the City
+      Council on January 10, 2022
+    verified: false
+  issue.pledge_type:
+    value: full faith and credit general obligation
+    page: 6
+    snippet: The Bonds constitute valid and legally binding full faith and credit
+      general obligations of the City and are payable from any funds of the City legally
+      available for such purpose
+    verified: false
+  issue.revenue_source:
+    value: ad valorem taxes levied against all taxable property without limitation
+      as to rate or amount
+    page: 4
+    snippet: "The Bonds are valid and legally binding obligations of the City payable\
+      \ both as to principal and \ninterest from ad valorem taxes levied against all\
+      \ taxable property therein without limitation as to rate \nor amount."
+    verified: false
+  # REVIEWER NOTE: the Series 2024 GO bonds have no debt service reserve fund.
+  # Two trap passages in this OS have fooled extraction models: p138 describes the
+  # city's general-fund OPERATING reserve policy (a budget cushion, not a bondholder
+  # reserve), and p139 describes a DSRF for Series 2021 conduit revenue bonds issued
+  # for a school, for which "the City is not obligated in any manner". Correct
+  # answer for this issue: not disclosed (null).
+  issue.debt_service_reserve:
+    value: null
+    page: null
+    snippet: null
+    verified: false
+  issue.fiscal_year_end:
+    value: December 31
+    page: 23
+    snippet: audited the financial statements for fiscal year ended December 31, 2023
+    verified: false
+  issue.annual_filing_deadline:
+    value: 270 days after the close of the City's fiscal year
+    page: 23
+    snippet: "The City has covenanted in connection with the issuance of the Bonds\
+      \ to file its ACFR and certain additional \nfinancial and operating data within\
+      \ 270 days after the close of the City's fiscal year."
+    verified: false
+  holding.cusip:
+    value: 299228 KL9
+    page: 1
+    snippet: 299228 KL9
+    verified: false
+  holding.coupon:
+    value: 5.000%
+    page: 1
+    snippet: "$   960,000 ........  2025 \n 5.000% \n3.470% \n299228 KL9"
+    verified: false
+  holding.maturity_date:
+    value: December 1, 2025
+    page: 1
+    snippet: The Bonds will mature on December 1 in the following years and amounts.
+    verified: false
+  holding.call_features:
+    value: not subject to optional redemption
+    page: 9
+    snippet: The Bonds due December 1, 2025-2033, inclusive, are not subject to optional
+      redemption.
+    verified: false
+  holding.tax_status:
+    value: excludable from gross income of the owners thereof for federal income tax
+      purposes; not exempt from present State of Illinois income taxes
+    page: 1
+    snippet: "interest on the Bonds is excludable from gross income of the owners\
+      \ thereof for federal income tax purposes and is not included as an item of\
+      \ tax preference in computing the \nfederal alternative minimum tax for individuals."
+    verified: false
